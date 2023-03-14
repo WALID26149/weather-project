@@ -1,0 +1,21 @@
+<%- include('partials/header'); -%>
+<div class="container">
+   <div class="card">
+     <form  action="/weather" method="post">
+       <input class="InputLocation" type="text" name="input" placeholder="Location">
+       <button class="btn-search" type="submit" name="button"><i class="lni lni-search-alt"></i></button>
+      </form>
+   </div>
+   <!-- footer -->
+<footer>
+  <div class="copy-right">
+    <!-- set dynamic date -->
+    <script type="text/javascript">
+      const getDate = new Date().getFullYear();
+      document.write('Walid Allan CopyRight &copy '+ getDate)
+    </script>
+    <!-- <p>Walid Allan CopyRight © 2022</p> -->
+  </div>
+</footer>
+ </div>
+ <%- include('partials/footer'); -%>

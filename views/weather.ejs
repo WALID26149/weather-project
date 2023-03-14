@@ -1,0 +1,16 @@
+<%- include('partials/header'); -%>
+<div class="container-2">
+    <div class="weather-res">
+        <div class="card-2">
+            <form  action="/weather" method="post">
+              <input class="InputLocation" type="text" name="input" placeholder="Location">
+              <button class="btn-search" type="submit" name="button"><i class="lni lni-search-alt"></i></button>
+             </form>
+          </div>
+            <h1><%= location %></h1>
+            <img src=<%= img %> alt="img">
+           <h2><%= name %><span>°C</span></h2>
+           <p><%= desc %></p>
+    </div>
+</div>
+<%- include('partials/footer'); -%>

@@ -1,0 +1,123 @@
+body{
+  height: 100vh;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  background-color: #1C82AD;
+}
+/* style the scrolle bar */
+::-webkit-scrollbar {
+  width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(46, 83, 120, 0.3);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  
+  }
+  body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color:#fff;
+  border: 0.5px solid #ccc;
+  }
+  h2{
+    text-align: center;
+  }
+  p{
+    color: grey;
+  }
+  span{
+    font-size: 15px;
+    color: red;
+  }
+form{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.container{
+  height: 94vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card{
+  width: 340px;
+  height: 82px;
+  border: 0;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+}
+.lni-cloud::before {
+  font-size: 70px;
+}
+.icon-cloud{
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+.heading{
+  text-align: center;
+  letter-spacing: 1px;
+}
+.InputLocation{
+  border: 0;
+  border-radius: 5px;
+  padding: 15px 25px;
+  margin: 10px 0;
+  width: 65%;
+  background-color: #f5f5f5;
+}
+.InputLocation::focus{
+  outline: hidden;
+}
+.btn-search{
+  background-color: #03C988;
+  border: 0;
+  border-radius: 50%;
+  padding: 7px;
+  color: #fff;
+  margin: 20px 5px;
+  transition: 0.3s;
+  font-size: 25px;
+}
+.btn-search:hover{
+  background-color: #1F8A70;
+  transition: 0.3s;
+}
+/* the weather response */
+.weather-res{
+  background-color: #fff;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 10px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.card-2{
+  width: 100%;
+  border: 0;
+  transition: 0.3s;
+}
+.card-2 form{
+  margin: 0 10px;
+}
+/* copy right style */
+.copy-right{
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  margin: 0 0 25px 0;
+  font-size: 17px
+}

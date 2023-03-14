@@ -1,0 +1,56 @@
+const express = require('express');
+const bodyParser = require('body-parser');
+const https = require('https');
+
+const app = express();
+app.set("view engine", "ejs");
+app.use(bodyParser.urlencoded({extended:true}))
+app.use(express.static(__dirname + 'public'));
+
+
+
+app.get('/', function(req, res) {
+  res.render('home');
+});
+// get the style.css
+app.get('/css/style.css/', function(req, res) {
+  res.sendFile(__dirname + "/public/css/style.css")
+});
+
+// get the favicon
+app.get('weather.png', (req, res) => {
+  res.sendFile(__dirname + "weather.png")
+})
+app.get('/index.js', function(req, res) {
+  res.sendFile(__dirname + "/public/index.js")
+});
+app.get('/weather', function(req, res) {
+  res.render('weather')
+});
+
+app.post('/weather', function(req, res) {
+  const country = req.body.input;
+  const apiKey ="cede0d7755a540882fcfcb121ea86b17" ;
+  const url =`https://api.openweathermap.org/data/2.5/weather?q=${country}&appid=${apiKey}&units=metric`;
+
+  https.get(url, function(response) {
+    response.on("data", function(data) {
+      const weatherData = JSON.parse(data)
+      const temp = weatherData.main.temp;
+      const icon = weatherData.weather[0].icon;
+      const desc = weatherData.weather[0].description;
+      const country = weatherData.name;
+      const img =`http://openweathermap.org/img/wn/${icon}@2x.png`;
+      res.render('weather', {
+        location: `${country}`,
+        name:`the temp in ${country} is ${temp}`,
+        desc: `${desc}`,
+        img:`${img}`,
+       })
+    })
+  })
+});
+
+app.listen(3002, function(req, res) {
+  console.log("server is running in port 3002");
+})
