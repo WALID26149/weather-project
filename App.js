@@ -51,6 +51,6 @@ app.post('/weather', function(req, res) {
   })
 });
 
-app.listen(3002, function(req, res) {
+app.listen(process.env.PORT|| 3002, function(req, res) {
   console.log("server is running in port 3002");
 })
