@@ -1,8 +1,10 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const https = require('https');
+const favicon = require('express-favicon');
 
 const app = express();
+app.use(favicon(__dirname + '/public/weather.png'));
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(express.static(__dirname + 'public'));
@@ -17,10 +19,6 @@ app.get('/css/style.css/', function(req, res) {
   res.sendFile(__dirname + "/public/css/style.css")
 });
 
-// get the favicon
-app.get('weather.png', (req, res) => {
-  res.sendFile(__dirname + "weather.png")
-})
 app.get('/index.js', function(req, res) {
   res.sendFile(__dirname + "/public/index.js")
 });
